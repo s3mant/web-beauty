@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <title>Vexatious Site</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background: rgb(23, 24, 26);
+        font-family: "Montserrat", sans-serif;
+        overflow: hidden;
+        color: #fefeff;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        text-align: center;
+        height: 50vh;
+      }
+      #enter {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: fadein 3s;
+        font-variant: small-caps;
+        transition: opacity 500ms;
+      }
+      .gay {
+        background: linear-gradient(
+            rgba(255, 0, 0, 1) 0%,
+            rgba(255, 154, 0, 1) 10%,
+            rgba(208, 222, 33, 1) 20%,
+            rgba(79, 220, 74, 1) 30%,
+            rgba(63, 218, 216, 1) 40%,
+            rgba(47, 201, 226, 1) 50%,
+            rgba(28, 127, 238, 1) 60%,
+            rgba(95, 21, 242, 1) 70%,
+            rgba(186, 12, 248, 1) 80%,
+            rgba(251, 7, 217, 1) 90%,
+            rgba(255, 0, 0, 1) 100%
+          )
+          0 0/100% 200%;
+        animation: a 200ms linear infinite;
+      }
+      @keyframes a {
+        to {
+          background-position: 0 -200%;
+        }
+      }
+      #show {
+        display: none;
+      }
+    </style>
+    <div id="enter">
+      <p>
+        This site is made to give you a taste of life.<br />
+        Note: This May damage your browser, enter at your own risk.<br />
+        Click <a onclick="start()">enter</a> or any key to start
+      </p>
+      <a
+        style="text-shadow: 0 0 7px #fff; letter-spacing: 1px"
+        onclick="start()"
+        >[ ENTER ]</a
+      >
+    </div>
+    <div id="show">
+      <img
+        src="https://i.pinimg.com/736x/ba/92/7f/ba927ff34cd961ce2c184d47e8ead9f6.jpg"
+      />
+    </div>
+    <script>
+      let screenOn;
+      window.onkeydown = (e) => {
+        e.preventDefault();
+        !screenOn ? start() : alert("Chunga Bunga");
+      };
+      function start() {
+        if (!screenOn) screenOn = true;
+        else return;
+        alert("be ready");
+        const enter = document.getElementById("enter"),
+          show = document.getElementById("show");
+        enter.style.opacity = "0";
+        setTimeout(() => {
+          document.body.removeChild(enter);
+          document.body.classList.add("gay");
+          show.style.display = "block";
+          alert("wip");
+        }, 500);
+      }
+    </script>
+  </body>
+</html>
