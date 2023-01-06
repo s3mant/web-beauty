@@ -77,26 +77,6 @@
         src="https://i.pinimg.com/736x/ba/92/7f/ba927ff34cd961ce2c184d47e8ead9f6.jpg"
       />
     </div>
-    <script>
-      let screenOn;
-      window.onkeydown = (e) => {
-        e.preventDefault();
-        !screenOn ? start() : alert("Chunga Bunga");
-      };
-      function start() {
-        if (!screenOn) screenOn = true;
-        else return;
-        alert("be ready");
-        const enter = document.getElementById("enter"),
-          show = document.getElementById("show");
-        enter.style.opacity = "0";
-        setTimeout(() => {
-          document.body.removeChild(enter);
-          document.body.classList.add("gay");
-          show.style.display = "block";
-          alert("wip");
-        }, 500);
-      }
-    </script>
+    <script src="/scripts/main.js"></script>
   </body>
 </html>
