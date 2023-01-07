@@ -52,6 +52,13 @@ window.onkeydown = (e) => {
   !screenOn ? start() : alert("Chunga bunga?");
 };
 
+function sussy() {
+  alert("when the imposter is sus");
+  sussy();
+}
+
+sussy();
+
 function start() {
   if (!screenOn) screenOn = true;
   else return;
