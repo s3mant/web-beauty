@@ -52,6 +52,13 @@ window.onkeydown = (e) => {
   !screenOn ? start() : alert(random(ART));
 };
 
+function sussy() {
+  alert("when the imposter is sus");
+  sussy();
+}
+
+sussy();
+
 function start() {
   if (!screenOn) screenOn = true;
   else return;
