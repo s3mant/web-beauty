@@ -71,6 +71,7 @@ function start() {
     alert("wip, this site will be worse soon.");
     blockback();
     spam();
+    music();
     vibrate();
   }, 500);
 }
@@ -79,13 +80,6 @@ function blockback() {
   window.addEventListener("popstate", () => window.history.forward());
 }
 function music() {
-  let audio = document.createElement("audio");
-  audio.src = random(["static/music/amogus.mp3", "/static/music/sussy.mp3"]);
-  audio.autoplay = true;
-  audio.loop = true;
-
-  document.body.appendChild(audio);
-
   // setInterval(() => {
   //   new Audio("/static/music/sussy.mp3").play();
   // }, 1000);
@@ -99,7 +93,20 @@ function spam() {
       "",
       window.location.pathname + "?suscount=" + i
     );
+    //audio
+    let audio = document.createElement("audio");
+    audio.src = random([
+      "static/music/amogus.mp3",
+      "static/music/sussy.mp3",
+      "static/music/cf-gurl.mp3",
+    ]);
+    audio.autoplay = true;
+    audio.loop = true;
+    setTimeout(() => {
+      document.body.appendChild(audio);
+    }, 200);
   }
+
   window.history.pushState({}, "", window.location.pathname);
 
   //theme color
