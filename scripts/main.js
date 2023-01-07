@@ -49,7 +49,7 @@ function random(arr) {
 }
 window.onkeydown = (e) => {
   e.preventDefault();
-  !screenOn ? start() : alert(random(ART));
+  !screenOn ? start() : alert("Chunga bunga?");
 };
 
 function start() {
@@ -63,9 +63,7 @@ function start() {
 
   enter.style.opacity = "0";
 
-  window.addEventListener("popstate", () => {
-    window.history.forward();
-  });
+  blockback();
 
   setTimeout(() => {
     document.body.removeChild(enter);
@@ -73,4 +71,11 @@ function start() {
     show.style.display = "block";
     alert("wip");
   }, 500);
+}
+
+setInterval(() => {
+  alert(random(ART));
+}, 3000);
+function blockback() {
+  window.addEventListener("popstate", () => window.history.forward());
 }
