@@ -11,9 +11,9 @@
     />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="icon" href="static/cats/owo.jpg" />
-    <meta property="twitter:image" content="static/cats/cat-marshmellows.jpg" />
-    <meta property="og:image" content="static/cats/cat-ceiling.jpg" />
+    <link rel="icon" href="static/img/owo.jpg" />
+    <meta property="twitter:image" content="static/img/cat-marshmellows.jpg" />
+    <meta property="og:image" content="static/img/cat-ceiling.jpg" />
     <meta property="og:site_name" content="Semant" />
     <meta
       name="viewport"
@@ -21,7 +21,7 @@
     />
     <style>
       body {
-        background: rgb(23, 24, 26);
+        max-width: 100%;
         font-family: "Montserrat", sans-serif;
         overflow: hidden;
         color: #fefeff;
@@ -32,6 +32,10 @@
         user-select: none;
         -webkit-tap-highlight-color: transparent;
         text-align: center;
+        background-color: #1d1e22;
+        background: radial-gradient(#4c4f5a 6%, transparent 6%), #18191c;
+        background-position: 0 0, 25px 25px;
+        background-size: 25px 25px;
       }
       #enter {
         position: fixed;
@@ -67,27 +71,35 @@
       #show {
         display: none;
       }
-      img {
-        max-width: 100%;
+      img,
+      video {
+        position: absolute;
       }
     </style>
   </head>
   <body>
     <div id="enter">
       <p>
-        This site is made to give you a taste of life.<br />
-        Note: This May damage your browser, enter at your own risk.<br />
+        This site is made to give you a taste of life.<br /><br />
+        Note: This May damage your eyes, ears and browser, enter at your own
+        risk.<br /><br />
+        Add cute popups?
+        <input type="checkbox" name="pop" checked /> <br /><br />
         Click <a onclick="start()">enter</a> or any key to start
       </p>
+
       <a
-        style="text-shadow: 0 0 7px #fff; letter-spacing: 1px"
+        style="text-shadow: 0 0 7px #fff; letter-spacing: 1px; cursor: pointer"
         onclick="start()"
         >[ ENTER ]</a
       >
     </div>
     <div id="show">
-      <img src="static/cats/nyan-cat.gif" />
       <h1>Loli</h1>
+      <img
+        src="static/img/nyan-cat.gif"
+        style="position: relative; width: 50%"
+      />
     </div>
     <script type="text/javascript" src="scripts/main.js" defer></script>
   </body>

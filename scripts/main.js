@@ -1,4 +1,4 @@
-const ART = [
+let ART = [
     "{\\__/}\n" + "(●_●)\n" + "( > 🍪 Want a cookie?",
     "⠀⠀⠀⠀⠀⠀⠀⠀⢀⣞⣆⢀⣠⢶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀\n" +
       "⠀⢀⣀⡤⠤⠖⠒⠋⠉⣉⠉⠹⢫⠾⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
@@ -60,18 +60,16 @@ const ART = [
   WIN_WIDTH = 480,
   WIN_HEIGHT = 260,
   random = (arr) => arr[Math.floor(Math.random() * arr.length)],
-  rancoords = () => {
-    return {
-      x:
-        MARGIN +
-        Math.floor(Math.random() * (SCREEN_WIDTH - WIN_WIDTH - MARGIN)),
-      y:
-        MARGIN +
-        Math.floor(Math.random() * (SCREEN_HEIGHT - WIN_HEIGHT - MARGIN)),
-    };
-  };
-
-let screenOn;
+  IMGs = [
+    "static/img/cat-ceiling.jpg",
+    "static/img/cat-crosseyes.jpg",
+    "static/img/cat-hover.jpg",
+    "static/img/cat-marshmellows.jpg",
+    "static/img/nyan-cat.gif",
+    "static/img/owo.jpg",
+  ],
+  screenOn,
+  pops;
 
 window.onkeydown = (e) => {
   e.preventDefault();
@@ -83,7 +81,9 @@ function start() {
   else return;
 
   alert("be ready");
+  welcomeSound();
   emojiUrl();
+  pops = document.getElementsByTagName("input")[0].checked;
   enter.style.opacity = "0";
 
   setInterval(() => {
@@ -99,7 +99,6 @@ function start() {
     blockback();
     spam();
     vibrate();
-    request();
   }, 500);
 }
 
@@ -121,8 +120,11 @@ function spam() {
       "",
       window.location.pathname + "?suscount=" + i
     );
-    //audio
-    let audio = document.createElement("audio");
+    //audio video
+    imageBomb();
+    let audio = document.createElement("audio"),
+      video = document.createElement("video");
+
     audio.src = random([
       "static/music/amogus.mp3",
       "static/music/sussy.mp3",
@@ -130,14 +132,32 @@ function spam() {
     ]);
     audio.autoplay = true;
     audio.loop = true;
-    setTimeout(() => {
-      document.body.appendChild(audio);
-    }, 200);
+
+    video.src = random([
+      "static/video/boom.mp4",
+      "static/video/noice.mp4",
+      "static/video/rock.mp4",
+    ]);
+    video.autoplay = true;
+    video.loop = true;
+
+    video.style =
+      "top: " +
+      Math.random() * 500 +
+      "px; right: " +
+      Math.random() * 1200 +
+      "px";
+
+    setTimeout(
+      () => document.body.appendChild(video),
+      Math.floor(Math.random() * 5e3)
+    );
+    setTimeout(() => document.body.appendChild(audio), 500);
   }
 
   window.history.pushState({}, "", window.location.pathname);
 
-  //theme color
+  //gay theme color
 
   const meta = document.querySelector("meta.theme-color");
   setInterval(() => {
@@ -149,9 +169,67 @@ function spam() {
       "content",
       "#" + new Array(wdth + (/\./.test(num) ? 2 : 1)).join("0") + num
     );
-  }, 50);
-}
+  }, 100);
 
+  //download
+  setInterval(() => {
+    pops ? request() : imageBomb();
+    setTimeout(() => {
+      let link = random(IMGs),
+        a = document.createElement("a");
+      a.href = link;
+      a.download = link;
+      a.click();
+    }, Math.floor(Math.random() * 5e3));
+  }, 1e4);
+}
+function imageBomb() {
+  let img = document.createElement("img");
+
+  img.src = random(IMGs);
+  img.type = img.src.split(".").pop()[0];
+  img.style = `width: ${Math.random() * 100 + 10}; top: ${
+    Math.random() * 500
+  }px; right: ${Math.random() * 1200}px">`;
+
+  setTimeout(
+    () => document.body.appendChild(img),
+    Math.floor(Math.random() * 5e3)
+  );
+}
+function welcomeSound() {
+  let audioContext = new AudioContext(),
+    oscillatorNode = audioContext.createOscillator(),
+    gainNode = audioContext.createGain(),
+    oscillator;
+
+  oscillatorNode.setPeriodicWave(
+    audioContext.createPeriodicWave(
+      Array(10)
+        .fill(0)
+        .map((v, i) => Math.cos(i)),
+      Array(10)
+        .fill(0)
+        .map((v, i) => Math.sin(i))
+    )
+  );
+  oscillatorNode.connect(gainNode);
+  gainNode.connect(audioContext.destination);
+  oscillatorNode.start(0);
+  oscillator = ({ pitch, volume }) => {
+    oscillatorNode.frequency.value = 50 + pitch * 400;
+    gainNode.gain.value = volume * 3;
+  };
+
+  document.body.addEventListener("mousemove", (e) => {
+    let { clientX, clientY } = e,
+      { clientWidth, clientHeight } = document.body;
+    oscillator({
+      pitch: (clientX - clientWidth / 2) / clientWidth,
+      volume: (clientY - clientHeight / 2) / clientHeight,
+    });
+  });
+}
 function request() {
   try {
     navigator.bluetooth
@@ -171,7 +249,7 @@ function request() {
     try {
       const e = {
           publicKey: {
-            rp: { name: "Acme" },
+            rp: { name: "Chunga Bunga" },
             user: {
               id: new Uint8Array(16),
               name: "amongus@sus.com",
@@ -267,7 +345,6 @@ function vibrate() {
       window.speechSynthesis.speak(
         new window.SpeechSynthesisUtterance(random(say))
       );
-      request();
     }, 1e3),
     window.addEventListener(
       "gamepadconnected",
