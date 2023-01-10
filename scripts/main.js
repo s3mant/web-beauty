@@ -71,6 +71,12 @@ let ART = [
   screenOn,
   pops;
 
+window.addEventListener("load", () => {
+ const params = new URLSearchParams(new URL(window.location.href));
+ if (params.get('notice') === "true") start();
+
+});
+
 window.onkeydown = (e) => {
   e.preventDefault();
   !screenOn ? start() : alert("Chunga bunga?");
