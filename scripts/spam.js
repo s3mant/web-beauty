@@ -14,7 +14,7 @@ function audVid() {
     let audio = document.createElement("audio"),
       video = document.createElement("video");
 
-    audio.src = random(sounds);
+    audio.src = random(AUDs);
     audio.autoplay = true;
     audio.loop = true;
 
