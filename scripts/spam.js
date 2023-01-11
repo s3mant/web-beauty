@@ -9,7 +9,7 @@ function spam() {
 
 function audVid() {
   //sapm audio and video
-  for (let i = 1; i < 200; i++) {
+  for (let i = 1; i < 100; i++) {
     imageBlast();
     let audio = document.createElement("audio"),
       video = document.createElement("video");
