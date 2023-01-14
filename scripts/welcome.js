@@ -6,8 +6,15 @@ window.vars = {
   enter: document.getElementById("enter"),
 };
 function init() {
-  const params = new URLSearchParams(new URL(window.location.href).search);
+  let params = new URLSearchParams(new URL(window.location.href).search),
+    ebtn = document.getElementById("enterbtn");
   if (params.get("notice") == "false") start();
+  document.getElementById("enterbtn1").onclick = ebtn.onclick = start;
+  ebtn.onmouseover = () => {
+    ebtn.style.left == "200px"
+      ? (ebtn.style.left = "-200px")
+      : (ebtn.style.left = "200px");
+  };
 
   window.onkeydown = (e) => {
     e.preventDefault();

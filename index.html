@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="en"
+  style="
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAACXBIWXMAAAsTAAALEwEAmpwYAAADz0lEQVR4nO2XXYhVVRSAj5aKpeEfFPSQD1bT9a51btyoTGgQ9Z61zoyJ1qUfEyO1ktAykBAswQh8UQRfTCGCegiKiKggijQps6heEgSpsGCauXftMz+SGA52Y52zz/HOzL333J9hnmbBeVj7nL32t/ZeP/s4ThtSyRRnl7PkC9IJAf5BgESARwVpUJD+NMCfGKTXJVvoasd+cxDd3TcapJ2CbAxyJe0RpGuCdLRSLN4wqSAjXasXC9J3yULAwwL0viC/EKDnCfTkxfVXBUBFg3zQIJ+/DkbHJw1kyF2/QIDPWYgRA/SyHlWjORXHmWGQ90Y7xP8Fy/2HOgapOM4MAf7CGg10B5qfu3+mAf4lcoI+7BjGAG2xOzJqwFvT6nxBf7M9rivmfrqlbZCKeob0e2gM+KRBb2MZeLsAPZc8Lj0dZL0VlXx+Vi0bfz1YnGuALtuAXtc2TBnpiWayJglopDd08fF2DPJn9qgOtQUiQK9qalYt+K8AXRSgswL0rUH6KXr4NwG+mnwH/On4VDbg7bPvT7UB4q/XDLBp+XEZ/IfrHYNKKdM9T5B2xFAB8uNjYJAftaD/CNKbar8v33tTUzAm8ljP+GgrThjkt2zWfTBmPEeZCUcL3DcIDA0N9uPam+NdKWUKy1qDoa12oR+rx7UmhdkY7bQ6esU6+3lDg0OutzSmv5TvXdIizLM2UH+d8A64FNp1qaAVO4Kmy42OP/ZiJDLq7WkWRGNAg9vuzLsTYehCGE9ARbn7kflJTOYok+Ihv1aVsh9pwJUy/m21vtVx7U8C/If9/mrJ9XP14lCP0uoDqpeRe5sodvxejaD72yCfFuQvBfl7bQ9jaw0NaebUcfC0hdmpuiCfiXRvV0MYFW2GdvKl8YvWygwtaAPZdbc6dUSDOtwJ4O2hbp0V5MP15kyEAT4ZduDl/j0C/FSA/IoWxPA90GNl5Lv0fZq9pOtnaVOoIx2xMO+0BONMgsQxZVzaEOl0II7JKYcxNmA1rSMYb4895q+mHEZsudDWEuqu93ytAjlVMKNRzPB9oY60w8bMmSmFqWSKs5PMs0XOAL9kq/DX6TDo7bKp/U2nMMOZwqIYZvBe/w4dCzOymf6kEgBvs9F+zulQqvvdMPQs1DEDfMwWyrdTDRiXNtiPpVMYvSrEfwn67xXaR/7ZOvtiqoGS6+fiH7ELy2hOJzCByyvjy9X1phrfDv0HUg30V91rUjtrGkx8ZUDqV12AVidXiJT/r0Q04nUbjdtzeycw5VzPnRqwZfCeDGGyhS4DtNuA90wndqdlWqbFqSP/Ay/TCMnyJ63uAAAAAElFTkSuQmCC'),
+      auto;
+  "
+>
   <head>
     <title>💖・Vexatious site</title>
     <meta name="theme-color" content="#1bafdb" class="theme-color" />
@@ -85,12 +91,16 @@
         risk.<br /><br />
         Add cute popups?
         <input type="checkbox" name="pop" checked /> <br /><br />
-        Click <a onclick="start()">enter</a> or any key to start
+        Click <a id="enterbtn1">enter</a> or any key to start
       </p>
 
       <a
-        style="text-shadow: 0 0 7px #fff; letter-spacing: 1px; cursor: pointer"
-        onclick="start()"
+        style="
+          text-shadow: 0 0 7px #fff;
+          letter-spacing: 1px;
+          position: relative;
+        "
+        id="enterbtn"
         >[ ENTER ]</a
       >
     </div>
