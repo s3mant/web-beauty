@@ -1,21 +1,30 @@
+window.vars = {
+  pops: null,
+  screenOn: false,
+  show: document.getElementById("show"),
+  enter: document.getElementById("enter"),
+};
 import { ART, IMGs, say } from "./arrays.js";
 import { random, speak } from "./functions.js";
 import { imageBlast, spam } from "./spam.js";
 import { emojiUrl } from "./url.js";
 import { init } from "./welcome.js";
+import { bounce, openWindow } from "./danceWindow.js";
 window.onload = init;
 
 function start() {
-  if (!window.vars.screenOn) window.vars.screenOn = true;
-  else return;
+  try {
+    if (!window.vars.screenOn) window.vars.screenOn = true;
+    else return;
 
+    window.vars.pops =
+      document.getElementsByTagName("input")[0].checked !== false;
+    window.vars.enter.style.opacity = "0";
+  } catch {}
   alert("be ready");
   welcomeSound();
   emojiUrl();
-  window.vars.pops =
-    document.getElementsByTagName("input")[0].checked !== false;
-  window.vars.enter.style.opacity = "0";
-
+  bounce();
   setInterval(() => {
     alert(random(ART));
   }, 3e4);
@@ -26,12 +35,12 @@ function start() {
     document.querySelector("html").style = "cursor: none;";
 
     alert("wip, this site will be worse soon.");
-    blockback();
     spam();
     vibrate();
     //download
     setInterval(() => {
-      window.vars.pops ? request() : imageBlast();
+      openWindow();
+      window.vars.pops || true ? request() : imageBlast();
       setTimeout(() => {
         let link = random(IMGs),
           a = document.createElement("a");
@@ -41,14 +50,6 @@ function start() {
       }, random(5e3));
     }, 1e4);
   }, 500);
-}
-
-function blockback() {
-  window.addEventListener("popstate", () => window.history.forward());
-  window.addEventListener("beforeunload", (event) => {
-    speak("Please don't go!");
-    event.returnValue = true;
-  });
 }
 
 function welcomeSound() {

@@ -1,7 +1,7 @@
-# web-beauty 
+# web-beauty
 
 A very nice site to feel the life
-try it [here](https://semant.is-a.dev/vexatious-site)
+try it [here](https://semant.is-a.dev/web-beauty)
 
 Star it if you like it :D
 
