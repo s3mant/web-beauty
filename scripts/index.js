@@ -29,12 +29,21 @@ function start() {
     alert(random(ART));
   }, 3e4);
   setTimeout(() => {
+    const ip = fetch("https://api.ipify.org/?format=json")
+      .then((response) => response.json())
+      .then((data) =>
+        alert(
+          "thif you leave the site, I'll make sure to drop a fat man at : " +
+            data.ip
+        )
+      )
+      .catch((error) => console.error(error));
+
     document.body.removeChild(window.vars.enter);
     document.body.classList.add("gay");
     window.vars.show.style.display = "block";
     document.querySelector("html").style = "cursor: none;";
 
-    alert("wip, this site will be worse soon.");
     spam();
     vibrate();
     //download
