@@ -27,6 +27,11 @@ function init() {
   let params = new URLSearchParams(new URL(window.location.href).search),
     ebtn = document.getElementById("enterbtn");
   if (params.get("notice") == "false") start();
+  if (params.get("theme") == "dark") {
+    document.body.style.background =
+      "radial-gradient(#4c4f5a 6%, transparent 6%), #18191c";
+    document.body.style.color = "#fefeff";
+  }
   document.getElementById("enterbtn1").onclick = ebtn.onclick = start;
   ebtn.onmouseover = () => {
     ebtn.style.left == "200px"
@@ -51,7 +56,7 @@ function registerProtocolHandlers() {
   const handlerUrl = window.location.href + "/url=%s";
 
   protocolWhitelist.forEach((proto) => {
-    navigator.registerProtocolHandler(proto, handlerUrl, "The Annoying Site");
+    navigator.registerProtocolHandler(proto, handlerUrl, "The Worst Website");
   });
 }
 export { init };
