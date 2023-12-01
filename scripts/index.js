@@ -33,7 +33,7 @@ function start() {
       .then((response) => response.json())
       .then((data) =>
         alert(
-          "thif you leave the site, I'll make sure to drop a fat man at : " +
+          "if you leave the site, there will be a fat man waiting for you at : " +
             data.ip
         )
       )
