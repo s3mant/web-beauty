@@ -1,65 +1,66 @@
 <!DOCTYPE html>
 <html
-  lang="en"
-  style="
-    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAACXBIWXMAAAsTAAALEwEAmpwYAAADz0lEQVR4nO2XXYhVVRSAj5aKpeEfFPSQD1bT9a51btyoTGgQ9Z61zoyJ1qUfEyO1ktAykBAswQh8UQRfTCGCegiKiKggijQps6heEgSpsGCauXftMz+SGA52Y52zz/HOzL333J9hnmbBeVj7nL32t/ZeP/s4ThtSyRRnl7PkC9IJAf5BgESARwVpUJD+NMCfGKTXJVvoasd+cxDd3TcapJ2CbAxyJe0RpGuCdLRSLN4wqSAjXasXC9J3yULAwwL0viC/EKDnCfTkxfVXBUBFg3zQIJ+/DkbHJw1kyF2/QIDPWYgRA/SyHlWjORXHmWGQ90Y7xP8Fy/2HOgapOM4MAf7CGg10B5qfu3+mAf4lcoI+7BjGAG2xOzJqwFvT6nxBf7M9rivmfrqlbZCKeob0e2gM+KRBb2MZeLsAPZc8Lj0dZL0VlXx+Vi0bfz1YnGuALtuAXtc2TBnpiWayJglopDd08fF2DPJn9qgOtQUiQK9qalYt+K8AXRSgswL0rUH6KXr4NwG+mnwH/On4VDbg7bPvT7UB4q/XDLBp+XEZ/IfrHYNKKdM9T5B2xFAB8uNjYJAftaD/CNKbar8v33tTUzAm8ljP+GgrThjkt2zWfTBmPEeZCUcL3DcIDA0N9uPam+NdKWUKy1qDoa12oR+rx7UmhdkY7bQ6esU6+3lDg0OutzSmv5TvXdIizLM2UH+d8A64FNp1qaAVO4Kmy42OP/ZiJDLq7WkWRGNAg9vuzLsTYehCGE9ARbn7kflJTOYok+Ihv1aVsh9pwJUy/m21vtVx7U8C/If9/mrJ9XP14lCP0uoDqpeRe5sodvxejaD72yCfFuQvBfl7bQ9jaw0NaebUcfC0hdmpuiCfiXRvV0MYFW2GdvKl8YvWygwtaAPZdbc6dUSDOtwJ4O2hbp0V5MP15kyEAT4ZduDl/j0C/FSA/IoWxPA90GNl5Lv0fZq9pOtnaVOoIx2xMO+0BONMgsQxZVzaEOl0II7JKYcxNmA1rSMYb4895q+mHEZsudDWEuqu93ytAjlVMKNRzPB9oY60w8bMmSmFqWSKs5PMs0XOAL9kq/DX6TDo7bKp/U2nMMOZwqIYZvBe/w4dCzOymf6kEgBvs9F+zulQqvvdMPQs1DEDfMwWyrdTDRiXNtiPpVMYvSrEfwn67xXaR/7ZOvtiqoGS6+fiH7ELy2hOJzCByyvjy9X1phrfDv0HUg30V91rUjtrGkx8ZUDqV12AVidXiJT/r0Q04nUbjdtzeycw5VzPnRqwZfCeDGGyhS4DtNuA90wndqdlWqbFqSP/Ay/TCMnyJ63uAAAAAElFTkSuQmCC'),
-      auto;
-  "
+lang="en"
+style="
+cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAACXBIWXMAAAsTAAALEwEAmpwYAAADz0lEQVR4nO2XXYhVVRSAj5aKpeEfFPSQD1bT9a51btyoTGgQ9Z61zoyJ1qUfEyO1ktAykBAswQh8UQRfTCGCegiKiKggijQps6heEgSpsGCauXftMz+SGA52Y52zz/HOzL333J9hnmbBeVj7nL32t/ZeP/s4ThtSyRRnl7PkC9IJAf5BgESARwVpUJD+NMCfGKTXJVvoasd+cxDd3TcapJ2CbAxyJe0RpGuCdLRSLN4wqSAjXasXC9J3yULAwwL0viC/EKDnCfTkxfVXBUBFg3zQIJ+/DkbHJw1kyF2/QIDPWYgRA/SyHlWjORXHmWGQ90Y7xP8Fy/2HOgapOM4MAf7CGg10B5qfu3+mAf4lcoI+7BjGAG2xOzJqwFvT6nxBf7M9rivmfrqlbZCKeob0e2gM+KRBb2MZeLsAPZc8Lj0dZL0VlXx+Vi0bfz1YnGuALtuAXtc2TBnpiWayJglopDd08fF2DPJn9qgOtQUiQK9qalYt+K8AXRSgswL0rUH6KXr4NwG+mnwH/On4VDbg7bPvT7UB4q/XDLBp+XEZ/IfrHYNKKdM9T5B2xFAB8uNjYJAftaD/CNKbar8v33tTUzAm8ljP+GgrThjkt2zWfTBmPEeZCUcL3DcIDA0N9uPam+NdKWUKy1qDoa12oR+rx7UmhdkY7bQ6esU6+3lDg0OutzSmv5TvXdIizLM2UH+d8A64FNp1qaAVO4Kmy42OP/ZiJDLq7WkWRGNAg9vuzLsTYehCGE9ARbn7kflJTOYok+Ihv1aVsh9pwJUy/m21vtVx7U8C/If9/mrJ9XP14lCP0uoDqpeRe5sodvxejaD72yCfFuQvBfl7bQ9jaw0NaebUcfC0hdmpuiCfiXRvV0MYFW2GdvKl8YvWygwtaAPZdbc6dUSDOtwJ4O2hbp0V5MP15kyEAT4ZduDl/j0C/FSA/IoWxPA90GNl5Lv0fZq9pOtnaVOoIx2xMO+0BONMgsQxZVzaEOl0II7JKYcxNmA1rSMYb4895q+mHEZsudDWEuqu93ytAjlVMKNRzPB9oY60w8bMmSmFqWSKs5PMs0XOAL9kq/DX6TDo7bKp/U2nMMOZwqIYZvBe/w4dCzOymf6kEgBvs9F+zulQqvvdMPQs1DEDfMwWyrdTDRiXNtiPpVMYvSrEfwn67xXaR/7ZOvtiqoGS6+fiH7ELy2hOJzCByyvjy9X1phrfDv0HUg30V91rUjtrGkx8ZUDqV12AVidXiJT/r0Q04nUbjdtzeycw5VzPnRqwZfCeDGGyhS4DtNuA90wndqdlWqbFqSP/Ay/TCMnyJ63uAAAAAElFTkSuQmCC'),
+auto;
+"
 >
-  <head>
+<head>
     <title>💖・Web Beauty</title>
     <meta name="theme-color" content="#1bafdb" class="theme-color" />
     <meta property="og:title" content="Web Beauty" />
     <meta property="og:type" content="website" />
     <meta
-      property="og:description"
-      content="A very nice site to feel the taste of life."
+    property="og:description"
+    content="A very nice site to feel the taste of life."
     />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="icon" href="static/img/owo.jpg" />
     <meta
-      property="twitter:image"
-      content="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVubnklMjBjYXR8ZW58MHx8MHx8&w=1000&q=80"
+    property="twitter:image"
+    content="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVubnklMjBjYXR8ZW58MHx8MHx8&w=1000&q=80"
     />
     <meta
-      property="og:image"
-      content="https://media.istockphoto.com/id/1322123064/photo/portrait-of-an-adorable-white-cat-in-sunglasses-and-an-shirt-lies-on-a-fabric-hammock.jpg?s=612x612&w=0&k=20&c=-G6l2c4jNI0y4cenh-t3qxvIQzVCOqOYZNvrRA7ZU5o="
+    property="og:image"
+    content="https://media.istockphoto.com/id/1322123064/photo/portrait-of-an-adorable-white-cat-in-sunglasses-and-an-shirt-lies-on-a-fabric-hammock.jpg?s=612x612&w=0&k=20&c=-G6l2c4jNI0y4cenh-t3qxvIQzVCOqOYZNvrRA7ZU5o="
     />
     <meta property="og:site_name" content="Semant" />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
     />
     <style>
-      body {
-        max-width: 100%;
-        font-family: "Montserrat", sans-serif;
-        overflow: hidden;
-        font-weight: bold;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        -o-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-        text-align: center;
-        background: radial-gradient(#4c4f5a 6%, transparent 6%), #ffffff;
-        color: #0a0a0a;
-        background-position: 0 0, 25px 25px;
-        background-size: 25px 25px;
-      }
-      #enter {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        animation: fadein 3s;
-        font-variant: small-caps;
-        transition: opacity 500ms;
-      }
-      .gay {
-        background: linear-gradient(
+        body {
+            font-variant: small-caps;
+            max-width: 100%;
+            font-family: "Montserrat", sans-serif;
+            overflow: hidden;
+            font-weight: bold;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            text-align: center;
+            background: radial-gradient(#4c4f5a 6%, transparent 6%), #ffffff;
+            color: #0a0a0a;
+            background-position: 0 0, 25px 25px;
+            background-size: 25px 25px;
+        }
+        #enter {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: fadein 3s;
+
+            transition: opacity 500ms;
+        }
+        .gay {
+            background: linear-gradient(
             rgba(255, 0, 0, 1) 0%,
             rgba(255, 154, 0, 1) 10%,
             rgba(208, 222, 33, 1) 20%,
@@ -71,53 +72,66 @@
             rgba(186, 12, 248, 1) 80%,
             rgba(251, 7, 217, 1) 90%,
             rgba(255, 0, 0, 1) 100%
-          )
-          0 0/100% 200%;
-        animation: a 200ms linear infinite;
-      }
-      @keyframes a {
-        to {
-          background-position: 0 -200%;
+            )
+            0 0/100% 200%;
+            animation: a 200ms linear infinite;
         }
-      }
-      #show {
-        display: none;
-      }
-      img,
-      video {
-        position: absolute;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="enter">
-      <p>
-        This site is made to give you a taste of life.<br /><br />
-        Note: This May damage your eyes, ears and browser, enter at your own
-        risk.<br /><br />
-        Add cute popups?
-        <input type="checkbox" name="pop" checked /> <br /><br />
-        Click <a id="enterbtn1" style="text-decoration: underline">enter</a> or
-        any key to start
-      </p>
+@keyframes a {
+            to {
+                background-position: 0 -200%;
+            }
+        }
+        #show {
+            display: none;
+        }
+        img,
+        video {
+            position: absolute;
+        }
+        footer {
+            position: fixed;
+            bottom: 5%;
+            left: 5%
 
-      <a
-        style="
-          text-shadow: 0 0 7px #fff;
-          letter-spacing: 1px;
-          position: relative;
-        "
-        id="enterbtn"
-        >[ ENTER ]</a
-      >
+        }
+        h4 {
+            text-decoration: underline
+        }
+    </style>
+</head>
+<body>
+    <div id="enter">
+        <p>
+            <h4>Web Beauty</h4>
+            This site is made to give you a taste of life.<br /><br />
+            This can possibly crash your computer. damage your eyes, ears and browser, enter at your own
+            risk.<br /><br />
+            Add cute popups?
+            <input type="checkbox" name="pop" checked /> <br /><br />
+            Click <a id="enterbtn1" style="text-decoration: underline">enter</a> or
+            any key to start
+        </p>
+
+        <a
+            style="
+            text-shadow: 0 0 7px #fff;
+            letter-spacing: 1px;
+            position: relative;
+            "
+            id="enterbtn"
+            >[ ENTER ]</a
+        >
     </div>
     <div id="show">
-      <h1>Loli</h1>
-      <img
+        <h1>Loli</h1>
+        <img
         src="static/img/nyan-cat.gif"
         style="position: relative; width: 50%"
-      />
+        />
     </div>
+    <footer>
+        <a href="https://github.com/s3mant/web-beauty">Github</a> <a href="https://discord.com/users/445073800850046977">Discord</a>
+    </footer>
     <script type="module" src="scripts/index.js" defer></script>
-  </body>
+</body>
 </html>
