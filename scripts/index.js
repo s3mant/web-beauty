@@ -21,7 +21,7 @@ function start() {
       document.getElementsByTagName("input")[0].checked !== false;
     window.vars.enter.style.opacity = "0";
   } catch {}
-  alert("be ready");
+  alert("Final warning");
   welcomeSound();
   emojiUrl();
   bounce();
