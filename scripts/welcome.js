@@ -26,7 +26,13 @@ const protocolWhitelist = [
 function init() {
   let params = new URLSearchParams(new URL(window.location.href).search),
     ebtn = document.getElementById("enterbtn");
-  if (params.get("notice") == "false") start();
+  /*
+this allows the start function if the notice parameter is set to false
+but for now is has removed because it may cause the domain to get flagged as "virus" as it just shoots all the functions without notifying anything
+  
+    if (params.get("notice") == "false") start();
+  
+  */
   if (params.get("theme") == "dark") {
     document.body.style.background =
       "radial-gradient(#4c4f5a 6%, transparent 6%), #18191c";
